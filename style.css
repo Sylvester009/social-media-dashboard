@@ -1,0 +1,346 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "inter";
+  src: url("Inter-VariableFont_slnt\wght.ttf");
+}
+
+:root {
+  /*Primary*/
+  --LimeGreen: hsl(163, 72%, 41%);
+  --BrightRed: hsl(356, 69%, 56%);
+  --Facebook: hsl(208, 92%, 53%);
+  --Twitter: hsl(203, 89%, 53%);
+  --Instagram: linear-gradient(hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+  --YouTube: hsl(348, 97%, 39%);
+
+  /*Dark Theme*/
+  --darkToggle: linear-gradient(hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+  --VeryDarkBlueBG: hsl(230, 17%, 14%);
+  --VeryDarkBlueTopBG: hsl(232, 19%, 15%);
+  --DarkDesaturatedBlueCardBG: hsl(228, 28%, 20%);
+  --DesaturatedBlueText: hsl(228, 34%, 66%);
+  --WhiteText: hsl(0, 0%, 100%);
+
+  /*Light Theme*/
+  --lightToggle: hsl(230, 22%, 74%);
+  --WhiteBG: hsl(0, 0%, 100%);
+  --VeryPaleBlueTopBG: hsl(225, 100%, 98%);
+  --LightGrayishBlueCardBG: hsl(227, 47%, 96%);
+  --DarkGrayishBlueText: hsl(228, 12%, 44%);
+  --VeryDarkBlueText: hsl(230, 17%, 14%);
+
+  /*font*/
+  --FontsizeOverviewCardHeadings: 14px;
+  --fontFamily: "Inter";
+  --weightOne: 400;
+  --weightTwo: 700;
+}
+
+.light-body {
+  background: var(--VeryPaleBlueTopBG);
+  font-family: "inter", "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 1rem;
+  padding: 30px;
+}
+
+.dark-body {
+  background: var(--VeryDarkBlueTopBG);
+  font-family: "inter", "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 1rem;
+  padding: 30px;
+}
+
+/*HEADER STYLES*/
+
+.title-div {
+  border-bottom: 1px solid var(--DarkGrayishBlueText);
+  padding-bottom: 25px;
+}
+
+.title {
+  font-size: 2em;
+  font-weight: var(--weightTwo);
+  color: var(--VeryDarkBlueText);
+  padding-bottom: 5px;
+}
+
+.dark-body .title {
+  color: var(--WhiteText);
+}
+
+.sub-text {
+  font-weight: var(--weightTwo);
+  color: var(--DarkGrayishBlueText);
+}
+
+.dark-body .sub-text {
+  color: var(--DesaturatedBlueText);
+}
+
+.toggle-div {
+  padding: 18px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* The switch - the box around the slider */
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 1.8em;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--lightToggle);
+  border: 1px solid var(--lightToggle);
+  transition: 0.4s;
+  border-radius: 32px;
+  outline: none;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  outline: 2px solid var(--WhiteBG);
+  right: 5px;
+  bottom: 2px;
+  background-color: var(--WhiteBG);
+  transition: transform 0.25s ease-in-out 0s;
+}
+
+input:checked + .slider {
+  background: linear-gradient(hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+}
+
+input:checked + .slider {
+  opacity: 1;
+}
+
+input:checked + .slider:before {
+  transform: translateX(-1.5em);
+  outline-color: var(--DarkDesaturatedBlueCardBG);
+  background-color: var(--DarkDesaturatedBlueCardBG);
+}
+
+.toggle-text {
+  font-weight: var(--weightTwo);
+  color: var(--DarkGrayishBlueText);
+}
+
+.dark-body .toggle-text {
+  color: var(--DesaturatedBlueText);
+}
+
+@media screen and (min-width: 900px) {
+  .light-body, .dark-body {
+    padding: 30px 5em;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .title-div {
+    border: none;
+  }
+
+  .toggle-div {
+    gap: 15px;
+  }
+}
+
+/**UPPER CARD STYLES**/
+
+.upper-card-section {
+  display: grid;
+  gap: 2em;
+  margin-top: 1em;
+}
+
+.light-card {
+  background-color: var(--LightGrayishBlueCardBG);
+  text-align: center;
+  padding: 10px 0px;
+  border-radius: 6px;
+}
+
+.dark-body .light-card {
+  background-color: var(--DarkDesaturatedBlueCardBG);
+  opacity: 1;
+}
+
+.first-card {
+  border-top: 5px solid var(--Facebook);
+}
+
+.second-card {
+  border-top: 5px solid var(--Twitter);
+}
+
+.third-card {
+  border-top: 5px solid hsl(329, 70%, 58%);
+}
+
+.fourth-card {
+  border-top: 5px solid var(--YouTube);
+}
+
+.icon-div,
+.rate-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 20px;
+}
+
+.handle {
+  color: var(--DarkGrayishBlueText);
+  font-weight: 600;
+}
+
+.dark-body .handle {
+  color: var(--DesaturatedBlueText);
+}
+
+.Followers-number {
+  font-size: 4em;
+  font-weight: bold;
+  opacity: 0.8;
+}
+
+.dark-body .Followers-number {
+  color: var(--WhiteText);
+  opacity: 100%;
+}
+
+.Followers {
+  color: var(--DarkGrayishBlueText);
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  padding: 5px 0px 0px;
+}
+
+.dark-body .Followers {
+  color: var(--DesaturatedBlueText);
+}
+
+.rate-div {
+  font-weight: bold;
+  color: var(--LimeGreen);
+}
+
+.fourth-card .rate-div {
+  color: var(--BrightRed);
+}
+
+@media screen and (min-width: 900px) {
+  .upper-card-section {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    place-content: center;
+  }
+}
+
+/*LOWER CARD SECTION*/
+
+.lower-card-section {
+  display: grid;
+  margin: 0em 0px 3em;
+  row-gap: 20px;
+}
+
+.sub-title {
+  padding-bottom: 0.5em;
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--DarkGrayishBlueText);
+  margin: 2em 0px 0.5em;
+}
+
+.dark-body .sub-title {
+  color: var(--WhiteText);
+}
+
+.lower-card {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.view-div {
+  text-align: left;
+}
+
+.views-social {
+  text-align: right;
+}
+
+.views-text {
+  color: var(--DarkGrayishBlueText);
+  font-weight: 600;
+}
+
+.dark-body .views-text {
+  color: var(--DesaturatedBlueText);
+}
+
+.views-number {
+  text-align: left;
+  font-weight: bold;
+  font-size: 2.5em;
+  color: var(--VeryDarkBlueText);
+  position: relative;
+  top: 40%;
+}
+
+.dark-body .views-number {
+  color: var(--WhiteText);
+}
+
+.lower-card-section .rate-div {
+  position: relative;
+  top: 20%;
+  padding-right: 0%;
+}
+
+.lower-second-card span,
+.lower-seventh-card span,
+.lower-eighth-card span {
+  color: var(--BrightRed);
+}
+
+@media screen and (min-width: 900px) {
+  .lower-card-section {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    place-content: center;
+    column-gap: 2em;
+  }
+}
